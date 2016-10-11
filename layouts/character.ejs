@@ -1,0 +1,41 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="grid__cell grid__cell--20">
+      <section class="section section--left">
+        <h2 class="section__title">Characters</h2>
+        <ul class="nav">
+          <% characters.sortBy('title').forEach(character => { %>
+            <li class="nav__item">
+              <a href="/<%= character.path %>/"><%= character.title %></a>
+            </li>
+          <% }) %>
+        </ul>
+    </div>
+    <div class="grid__cell grid__cell--80">
+      <section class="section">
+        <div class="character">
+          <div class="character__image">
+            <% if (imageUrl) { %>
+              <img src="<%= imageUrl %>" />
+            <% } %>
+          </div>
+          <h1 class="character__title"><%= title %></h1>
+          <ul class="meta">
+            <li class="meta__item">
+              <strong>Actor:</strong> <%= actorName %>
+            </li>
+            <li class="meta__item">
+              <strong>Number of episodes:</strong> <%= episodes %>
+          </ul>
+          <div class="character__content">
+            <%- contents %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

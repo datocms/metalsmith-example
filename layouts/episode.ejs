@@ -1,0 +1,59 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="grid__cell grid__cell--20">
+      <section class="section section--left">
+        <h2 class="section__title">Season episodes</h2>
+        <ul class="nav">
+          <% episodes.filter(e => e.seasonSlug === seasonSlug).forEach(episode => { %>
+            <li class="nav__item">
+              <a href="/<%= episode.path %>/">
+                <%= episode.title %>
+                <div class="nav__item__details">
+                  Episode #<%= episode.episodeNumber %>
+                </div>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+    </div>
+    <div class="grid__cell grid__cell--80">
+      <section class="section">
+        <div class="character">
+          <div class="character__image">
+            <% if (imageUrl) { %>
+              <img src="<%= imageUrl %>" />
+            <% } %>
+          </div>
+          <h1 class="character__title"><%= title %></h1>
+          <ul class="meta">
+            <li class="meta__item">
+              <strong>Season:</strong> <%= seasonName %>
+            </li>
+            <li class="meta__item">
+              <strong>Episode number: </strong><%= episodeNumber %>
+            </li>
+            <% if (director) { %>
+              <li class="meta__item">
+                <strong>Director: </strong><%= director %>
+              </li>
+            <% } %>
+            <li class="meta__item">
+              <strong>First aired:</strong> <%= date %>
+            </li>
+            <li class="meta__item">
+              <strong>Rating:</strong> <%= rating %>
+            </li>
+          </ul>
+          <div class="character__content">
+            <%- contents %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>

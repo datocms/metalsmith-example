@@ -1,0 +1,24 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <section class="section">
+    <div class="season">
+      <div class="season__image">
+        <img src="<%= imageUrl %>" />
+      </div>
+      <div class="season__content">
+        <h2 class="season__title"><%= title %></h2>
+        <%- contents %>
+        <hr/>
+        <div class="grid">
+          <% episodes.filter(e => e.seasonSlug === slug).forEach(episode => { %>
+            <div class="grid__cell grid__cell--50">
+              <% include partials/episode_preview %>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+</div>
+
+<% include partials/footer %>

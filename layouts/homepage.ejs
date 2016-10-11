@@ -1,0 +1,46 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <section class="section">
+    <h2 class="section__title">
+      Characters
+      <a href="/characters/" class="button">View All</a>
+    </h2>
+
+    <div class="grid grid--center">
+      <% characters.slice(0, 10).forEach(character => { %>
+        <% include partials/character_preview %>
+      <% }) %>
+    </div>
+  </section>
+</div>
+
+<hr />
+
+<div class="wrap">
+  <section class="section">
+    <h2 class="section__title">About the serie</h2>
+    <%- markdown(site.description) %>
+  </section>
+</div>
+
+<hr />
+
+<div class="wrap">
+    <section class="section">
+      <h2 class="section__title">
+        Latest episodes
+        <a href="/episodes/" class="button">View All</a>
+      </h2>
+      <div class="grid">
+        <% episodes.slice(0, 6).forEach(episode => { %>
+          <div class="grid__cell grid__cell--33">
+            <% include partials/episode_preview %>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+  </div>
+</div>
+
+<% include partials/footer %>

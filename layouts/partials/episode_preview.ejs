@@ -1,0 +1,12 @@
+<a href="/<%= episode.path %>/" class="episode-preview" data-preview="<%= episode.paletteUrl %>">
+  <div class="episode-preview__image" style="background-image: url('<%= episode.thumbnailUrl %>')"></div>
+  <div class="episode-preview__meta">
+    <div class="episode-preview__title">
+      <%= episode.title %>
+    </div>
+    <div class="episode-preview__details">
+      <%= episode.seasonName %> • Episode <%= episode.episodeNumber %>
+    </div>
+  </div>
+</a>
+

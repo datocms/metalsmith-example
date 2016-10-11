@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <section class="section">
+    <h2 class="section__title">Seasons</h2>
+    <div class="grid">
+    <% seasons.forEach(season => { %>
+      <div class="grid__cell grid__cell--33">
+        <a href="/<%= season.path %>/" class="season-preview">
+          <div class="season-preview__meta" style="background-image: url('<%= season.bgUrl %>')">
+            <div class="season-preview__image">
+              <img src="<%= season.thumbnailUrl %>" />
+            </div>
+            <h6 class="season-preview__title"><%= season.title %></h6>
+            <div class="season-preview__description">
+              <%= truncate(season.excerpt, 100) %>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% }) %>
+  </section>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<div class="wrap">
+  <section class="section">
+    <h2 class="section__title">Characters</h2>
+    <div class="grid">
+      <% characters.forEach(character => { %>
+        <% include partials/character_preview %>
+      <% }) %>
+    </div>
+  </section>
+</div>
+
+<% include partials/footer %>
