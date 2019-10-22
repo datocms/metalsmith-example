@@ -5,7 +5,7 @@
     "datocms-client": "0.2.4",
     "ejs": "2.5.2",
     "ellipsize": "0.0.2",
-    "marked": "0.3.6",
+    "marked": "0.7.0",
     "metalsmith": "2.1.0",
     "metalsmith-collections": "0.7.0",
     "metalsmith-layouts": "1.4.1",
