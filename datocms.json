@@ -1,0 +1,9 @@
+{
+  "name": "Metalsmith DatoCMS portfolio",
+  "previewImage": "https://raw.githubusercontent.com/datocms/gatsby-portfolio/master/preview.png",
+  "templateId": "portfolio",
+  "deploymentType": "static",
+  "datocmsApiTokenEnvName": "DATO_API_TOKEN",
+  "buildCommand": "yarn build",
+  "buildDirectory": "build"
+}
